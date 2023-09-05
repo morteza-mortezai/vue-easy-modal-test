@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import {defineAsyncComponent} from 'vue'
 import { openModal } from 'jenesius-vue-modal'
-import VoidInvoice from '@/components/VoidInvoice.vue';
+// import VoidInvoice from '@/components/VoidInvoice.vue';
+const VoidInvoice = defineAsyncComponent(() =>
+  import( '@/components/VoidInvoice.vue')
+)
 async function onOpen() {
-  const props={name:'ali'}
-  const modal = await openModal(VoidInvoice,props);
+  const props = { name: 'ali' }
+  const modal = await openModal(VoidInvoice, props);
   modal.onclose = () => {
-    alert('modal closed')
-}
+    //refresh page
+  }
 }
 </script>
 

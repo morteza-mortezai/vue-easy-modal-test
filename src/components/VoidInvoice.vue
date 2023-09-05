@@ -1,10 +1,10 @@
 <template>
     <div class="modal">
         <h1>
-    
-            Hello {{ name }}
-            I am Modal
+    Void Invoice
+            
         </h1>
+     props is :   {{ name }}
         <button @click="onClose">close</button>
     </div>
 </template>
